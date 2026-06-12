@@ -126,6 +126,16 @@
       </div>
     </div>
   </div>
+  <div v-if="mostrarJanelaExcluir" class="janela-alerta-fundo">
+    <div class="janela-alerta-card">
+      <h4>Deseja mesmo excluir?</h4>
+      <p>Essa ação não poderá ser desfeita.</p>
+      <div class="janela-alerta-botoes">
+        <button class="btn-confirmar-excluir" @click="confirmarDeletar">Sim, excluir</button>
+        <button class="btn-cancelar-excluir" @click="mostrarJanelaExcluir = false">Cancelar</button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -142,6 +152,8 @@ const novaTarefa = ref('')
 const categoriaSelecionada = ref('') 
 const tempoSelecionado = ref(30)
 const momentos = ref([])
+const mostrarJanelaExcluir = ref(false)
+const idParaDeletar = ref(null)
 
 const momentoSendoEditado = ref(null)
 const textoEditado = ref('')
@@ -234,12 +246,18 @@ const salvarMomento = async () => {
   }
 }
 
-const deletarMomento = async (id) => {
+const deletarMomento = (id) => {
   if (!id) return
-  if (!confirm("Deseja mesmo excluir este registro?")) return
+  idParaDeletar.value = id
+  mostrarJanelaExcluir.value = true 
+}
+
+const confirmarDeletar = async () => {
   try { 
-    await deleteDoc(doc(db, 'momentos', id)) 
-    momentos.value = momentos.value.filter(m => m.id !== id)
+    await deleteDoc(doc(db, 'momentos', idParaDeletar.value)) 
+    momentos.value = momentos.value.filter(m => m.id !== idParaDeletar.value)
+    mostrarJanelaExcluir.value = false 
+    idParaDeletar.value = null 
   } catch (error) { 
     console.error(error) 
   }
@@ -374,4 +392,11 @@ const fazerLogout = async () => {
 .btn-save-edit { color: #283618; }
 .btn-cancel-edit { color: #bc6c25; }
 .empty-list { font-size: 0.95rem; color: #777; font-style: italic; text-align: center; margin-top: 20px; }
+.janela-alerta-fundo { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(40, 54, 24, 0.15); display: flex; align-items: center; justify-content: center; z-index: 999;}
+.janela-alerta-card { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(40, 54, 24, 0.08); text-align: center; max-width: 350px; border-bottom: 3px solid #e3edf7;}
+.janela-alerta-card h4 { color: #283618; margin: 0 0 10px 0; font-size: 1.2rem; font-weight: 600; }
+.janela-alerta-card p { color: #777; font-size: 0.9rem; margin-bottom: 20px; }
+.janela-alerta-botoes { display: flex; gap: 10px; justify-content: center; }
+.btn-confirmar-excluir { background: #bc6c25; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.btn-cancelar-excluir { background: #fafbfc; border: 1px solid #d1d7cd; padding: 10px 20px; border-radius: 8px; cursor: pointer; color: #555; font-weight: 500; }
 </style>
