@@ -17,17 +17,17 @@
         <section class="topic">
           <h3>
             <svg class="topic-icon" viewBox="0 0 24 24" fill="none" stroke="#a3b18a" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
-            O Conceito das Fatias
+            Como funcionam os Pontos?
           </h3>
           <p>
-            Cada momento que você passa longe do celular ou do computador vale fatias de uma maçã. A ideia não é se esgotar, mas sim criar constância. Registre suas atividades de forma leve e acompanhe o crescimento do seu hábito no seu próprio tempo.
+            Cada momento que você passa longe do celular ou do computador rende pontos para o seu painel A ideia não é se esgotar, mas sim criar constância. Registre suas atividades de forma leve e acompanhe o crescimento do seu hábito no seu próprio tempo.
           </p>
         </section>
 
         <section class="topic">
           <h3>
             <svg class="topic-icon" viewBox="0 0 24 24" fill="none" stroke="#bc6c25" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Distribuição do seu Tempo
+            Como escolher seu tempo?
           </h3>
           <ul class="time-list">
             <li><strong>15 a 30 minutos:</strong> Perfeito para pausas rápidas na rotina, ler um capítulo curto ou dar uma arrumada no quarto.</li>
@@ -39,7 +39,7 @@
         <section class="topic-suggestions">
           <h3>
             <svg class="topic-icon" viewBox="0 0 24 24" fill="none" stroke="#283618" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-            Ideias para Desconexão Consciente
+            O que fazer?
           </h3>
           <p class="suggestion-notice">
             O foco aqui é simplesmente viver o momento offline. Veja algumas sugestões simples para mudar de ares durante o dia:
@@ -68,7 +68,7 @@
         <section class="topic">
           <h3>
             <svg class="topic-icon" viewBox="0 0 24 24" fill="none" stroke="#dda15e" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            O Amadurecimento
+            Entendendo seu progresso
           </h3>
           <p>
             Toda jornada começa com uma maçã verde. À medida que você acumula horas de dedicação real no mundo físico, sua pontuação sobe automaticamente. Pouco a pouco, sua rotina ganha consistência e sua maçã amadurece por completo.
